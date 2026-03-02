@@ -3,17 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <title>SBGN Demo</title>
+
     <style>
-      body { margin: 0; font-family: system-ui; }
-      #top { padding: 10px; border-bottom: 1px solid #ddd; }
-      #cy { width: 100vw; height: calc(100vh - 50px); }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #f4f6f8;
+        color: #222;
+      }
+
+      #top {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 16px;
+        background: white;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      #file {
+        padding: 6px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background: #fafafa;
+        cursor: pointer;
+      }
+
+      #file:hover {
+        background: #f0f0f0;
+      }
+
+      #visualize {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #4f46e5, #6366f1);
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      #visualize:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+      }
+
+      #visualize:active {
+        transform: scale(0.97);
+      }
+
+      #cy {
+        width: 100vw;
+        height: calc(100vh - 60px);
+        background: #f8fafc;
+      }
     </style>
   </head>
+
   <body>
 
     <div id="top">
       <input type="file" id="file" />
-      <button id="visualize">visualize</button>
+      <button id="visualize">Visualize</button>
     </div>
 
     <div id="cy"></div>
